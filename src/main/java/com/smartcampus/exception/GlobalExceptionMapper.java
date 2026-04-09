@@ -13,7 +13,8 @@ public class GlobalExceptionMapper implements ExceptionMapper<Throwable> {
     public Response toResponse(Throwable e) {
         Map<String, String> error = new HashMap<>();
         error.put("error", "Internal Server Error");
-        error.put("message", "An unexpected error occurred.");
+        error.put("message", e.getMessage());
+        error.put("type", e.getClass().getName());
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
                 .type(MediaType.APPLICATION_JSON)
                 .entity(error)
