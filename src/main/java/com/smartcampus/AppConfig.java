@@ -13,7 +13,7 @@ import com.smartcampus.exception.LinkedResourceNotFoundExceptionMapper;
 import com.smartcampus.exception.SensorUnavailableExceptionMapper;
 import com.smartcampus.filter.LoggingFilter;
 
-@ApplicationPath("/api/v1")
+@ApplicationPath("/")
 public class AppConfig extends Application {
     @Override
     public Set<Class<?>> getClasses() {
